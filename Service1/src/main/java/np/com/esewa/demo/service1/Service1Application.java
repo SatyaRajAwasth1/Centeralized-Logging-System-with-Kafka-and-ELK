@@ -1,4 +1,4 @@
-package np.com.esewa.demo.Service1;
+package np.com.esewa.demo.service1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

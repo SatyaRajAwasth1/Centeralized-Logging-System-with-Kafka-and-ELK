@@ -1,4 +1,4 @@
-package np.com.esewa.demo.Service1;
+package np.com.esewa.demo.service1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
