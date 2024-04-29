@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" name="spring-boot-kafka-log" packages="np.com.esewa.demo.service1">
+    <Appenders>
+        <Kafka name="Kafka" topic="centralized_log">
+            <PatternLayout
+                    pattern=" %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%X{correlationId}] %c{3} - %msg%n"/>
+            <Property name="bootstrap.servers">localhost:9094,localhost:9095,localhost:9096</Property>
+        </Kafka>
+        <Async name="Async">
+            <AppenderRef ref="Kafka"/>
+        </Async>
+
+        <Console name="stdout" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern=" %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%X{correlationId}] %c{3} - %msg%n"/>
+        </Console>
+
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Kafka"/>
+            <AppenderRef ref="stdout"/>
+        </Root>
+        <Logger name="org.apache.kafka" level="WARN"/>
+    </Loggers>
+</Configuration>

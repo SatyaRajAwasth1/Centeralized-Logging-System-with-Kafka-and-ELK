@@ -20,7 +20,7 @@ public class SampleController {
     }
 
     @GetMapping("/api/v1/eg")
-    public ResponseEntity<String> sayHey(@RequestParam String msg){
+    public ResponseEntity<String> sayHey(@RequestParam String msg) {
         logger.info("This is a msg from client: {}", msg);
         index();
         return new ResponseEntity<>( service.callToService2(msg), HttpStatus.OK);
@@ -28,6 +28,7 @@ public class SampleController {
 
     @GetMapping()
     public String index() {
+        service.test();
         logger.trace("A TRACE Message");
         logger.debug("A DEBUG Message");
         logger.info("An INFO Message");

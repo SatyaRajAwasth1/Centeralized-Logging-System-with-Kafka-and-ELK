@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 public class RequestCorrelation {
     public static final String CORRELATION_ID_HEADER = "correlationId";
 
-    private static final ThreadLocal<String> id = new ThreadLocal<>();
+    private static final ThreadLocal<String> id = new InheritableThreadLocal<>();
 
     public static String getId() {
         return id.get();

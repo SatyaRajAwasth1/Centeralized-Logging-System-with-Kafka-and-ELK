@@ -17,7 +17,7 @@ public class Service2Controller {
 
     @GetMapping("/api/v1/service2")
     ResponseEntity<Map<String, Object>> sampleController(@RequestParam String msg){
-        logger.info("Message: {}", msg);
+        logger.info("Message request: {}", msg);
         Map<String, Object> response = new HashMap<>();
         response.put("message", "Hey, response from service2: "+msg);
         logger.info("Responding with: {}", response);
