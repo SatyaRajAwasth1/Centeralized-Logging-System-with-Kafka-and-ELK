@@ -14,7 +14,7 @@ demo/
         └── pipeline.conf
 ```
 
-3. Run docker compose files
+2. Run docker compose files
 
 ```shell
  docker-compose -f kafka-docker-compose.yml -f elk-docker-compose.yml up -d
